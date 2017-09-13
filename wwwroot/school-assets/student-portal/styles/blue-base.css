@@ -1,0 +1,48 @@
+/* Overall theme styles */
+
+body {
+	background-color: #FFFFCC;
+}
+
+
+a,
+a:link,
+a:active,
+a:visited,
+a:focus,
+a:hover,
+a img {
+	/* basic link styling */
+	color: #DF7200;
+}
+		#header {
+			color: #E7CD83;
+			background: #456F8B url('../images/kamar.gif') no-repeat right 10px;
+		}
+		
+		#container {
+			background-color: #85AFCB;
+		}
+		
+			#navigation {
+				background-color: #658FAB;
+			}
+				#navigation li a {
+					/* each navigation item */
+					border-bottom: 1px solid #2A5876;
+					color: #FF9200;
+				}
+				#navigation li a:hover {
+					/* navigation hover/avtice state */
+					background-color: #43667D;
+				}
+			
+		#footer {
+			background-color: #456F8B;
+		}
+			
+			#admin-link a, #admin-link a:link, #admin-link a:visited, #admin-link a:hover {
+				color: #ffffff;
+			}
+		
+/* Common styles used on a number of pages */

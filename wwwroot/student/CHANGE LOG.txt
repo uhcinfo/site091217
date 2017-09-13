@@ -1,0 +1,371 @@
+KAMAR WEB INTERFACE
+KAMAR Limited
+
+http://www.kamar.co.nz
+
+@package Kamar
+
+Copyright 2009, KAMAR Limited.
+NOTE: Use of this source code is subject to the terms of the KAMAR
+License which accompanies this code. Your use of this source code
+signifies your agreement to such license terms and conditions.
+Code is developed by KAMAR for use with KAMAR only and is copyright
+and is intellectual property of KAMAR Limited.
+
+
+The KAMAR Parent Portal makes use CodeIgniter PHP Framework
+[http://ellislab.com/codeigniter]. The CI license is included in
+CI-license.txt.
+
+
+VERSION 3.0.0
+
+- Release notes for the Parent Portal are now included on the KAMAR Website along with other KAMAR Web changes. [http://www.kamar.co.nz/104838]
+
+
+
+VERSION 2.1.5
+
+Tweaks:
+ - Adjusted the text on the Attendance key for "Overseas Holiday" to show "Justified Overseas"
+ - Changed the name of the 'Results by Subject' page to 'Current Year Results', should better reflect the nature of the page
+
+
+
+VERSION 2.1.4
+
+New Features:
+ - Added the option to specify a year for the course selection to apply to. Allowing schools to use course selection for the current year as well as next year, if they choose to.
+
+Bugs Fixed:
+ - Fixed a minor bug that would cause an acheived NCEA result to show as 'Unexpected value encountered" on the NCEA summary page
+ - Fixed a bug where externals with results would continue to be reported as "external" instead of showing the result achieved after the results had been loaded into KAMAR
+ - Fixed a long standing bug where the portal wouldn't follow the same rules with calculated addresses/phone numbers against caregivers as KAMAR itself did. Now, residence fields should properly show against caregivers if the matching caregiver fields are not filled in with an alternative
+ - Fixed a bug in the way calendar events were being selected. It was possible for some events to not show on the portal if their dates fell on certain days relative to the current date
+
+
+
+VERSION 2.1.3
+
+Bugs Fixed:
+ - Fixed a major bug in the 2.1.2 code to speed up fees queries that would cause all charges to adopt the paid amounts of the final charge
+
+
+
+VERSION 2.1.2
+
+New Features:
+ - Added a checkbox to enable/disable showing Carry Forward fees on the fees pages on the portal
+
+Tweaks:
+ - The showing of carry forward charges highlighted a speed issue in the display of fees information, have simplified the way fees info is queried in order to speed up the fees pages (includes payment processing pages too)
+
+Known Issues:
+ - Due to the changes involved in the fix for the NCEA Summary a later version of KAMAR is required than was available at the time of release. Version 911.12 or later is necessary for the fixed NCEA Summary page to work correctly
+ - The new results by subject screen will currently list any markbook with results for a student as a subject, this includes teacher markbooks
+ - PayPal payments are NOT complete. Please do not enable them yet!
+
+
+
+VERSION 2.1.1
+
+Bugs Fixed:
+ - Fixed a major bug in the NCEA summary that would cause lower level credits to appear next to higher levels than intended in the credit summary tables (see known issue below)
+
+Known Issues:
+ - Due to the changes involved in the fix for the NCEA Summary a later version of KAMAR is required than was available at the time of release. Version 911.12 or later is necessary for the fixed NCEA Summary page to work correctly
+ - The new results by subject screen will currently list any markbook with results for a student as a subject, this includes teacher markbooks
+
+Tweaks:
+ - Adjusted the way calendar events show to have a row per event allowing a place to specify an end date
+
+
+
+VERSION 2.1.0
+
+New Features:
+ - Added an awards page to the portal to reflect the new awards changes in KAMAR
+ - Added new NCEA Summary page
+ - Added new Results by subject page which breaks down the current years assessment results by subject
+ - Added support for DPS PxPay payment processing
+ - Added the ability to enable partial fee payments
+ - Added an alternative version of the Pastoral area with more fields displaying (off by default)
+
+Bugs Fixed:
+ - Fixed a major problem with Flo2Cash payment processing that likely will have caused some payments to not be reflected in KAMAR
+ - Fixed a problem which would cause fees to display without their cents value
+ - Fees will now properly show previous years charges if they are flagged to carry forward
+
+Tweaks
+ - Fix for post-login message, had only been saying caregiver instead of primary caregiver when a PCG logged in
+ - Minor changes to messages on the portal pages, messages should now make sense regardless of which role is logged in
+ - Adjusted the text of the login failed message to suggest both username and password may be incorrect and prompt the user to try again
+ - Potential fix for a reports issue when spaces were present in the folder structure on UNIX web servers
+ - Fixing/suppressing errors from the Flo2Cash page
+ - Fixed to show an appropriate message on the payment confirmation page if the user selects no fees to pay
+ - Fixing/suppressing errors from the reports page
+ - Added the full path to the expected kamar-configuration.php after the config page fails to write the file
+ - Added a couple of minor warnings to the admin page
+ - Added an extra CSS handle to the submit button on the login page
+ - Removed link to KAMAR website from the footer of the default portal assets/template.php
+ - Fixed PHP includes to correctly work when application and system directories are moved
+
+
+
+VERSION 2.0.11
+
+ - Fix for another DIRECTORY_SEPARATOR issue when downloading a progress report on a UNIX-like web server
+ - Adjusted the titles on portal pages to no longer show the word 'KAMAR'
+ - Fix for Careers/Student Profile interview questions not showing up
+ - Suppression of an error on the Fees/Course Selection pages that would prevent a user-friendly error showing
+ - Fixed a number of cosmetic URL problems in the portal (no actual consequences, just weird looking URL's on some pages)
+ - Fixed a few issues in course selection where special characters were not being properly encoded for the XML file that they were appearing within
+ - Adjustment to the configuration page to remember data entered if validation fails (previously data would have to be re-entered each time an error showed)
+
+
+
+VERSION 2.0.10
+
+ - Increased memory limit for course selection admin scripts to compensate for a potentially large numbers of options
+
+
+
+VERSION 2.0.9
+
+ - Serious bug in admin area logic that would allow any password to authenticate a user as admin, regardless of if it matched the stored password
+ - Fixed a bug that would prevent the config page correctly detecting items in the pages directory under a UNIX-like operating system (produced an empty list of files)
+
+
+
+VERSION 2.0.8
+
+ - Change to suppress PHP errors by default (as most downloads will be for production servers)
+
+
+
+VERSION 2.0.7
+
+- Added blue-base and green-base default themes to give a starting point for schools wishing to edit a theme and to see what sort of things can be easily changed
+- Fixed a bug where the time wouldn't show at the bottom of the default portal template
+- Fixed a potential bug when trying to download progress reports
+
+
+
+VERSION 2.0.6
+
+- Added the ability to change themes (css files) via the admin page. Allows for theming the site as suggested by [http://www.kamar.co.nz/page/104227/How-do-I-customise-the-KAMAR-Parent-Portal] without explicitly adding the CSS file reference to the template; this should make upgrading portal versions a bit less painful
+- General tidy up of master.css file, removed extraneous rules, labeled sections should make it clear which rules are relevant to site-wide theming
+- Added some minor error suppression code to make a fresh portal install a bit more user friendly
+
+
+
+VERSION 2.0.5
+
+- Reports upload admin page added
+- Cache control page added
+- Caching is now handled more intelligently. If the database server isn't available the caching routines will fallback to using any cache files that had previously expired in an attempt to continue to answer queries. If the cache directory isn't working the Kamar Common Interface object factories will try to return live data every time.
+
+
+
+VERSION 2.0.4
+
+- PHP 5.3 support finalised, includes fixes to remove use of deprecated functions whenever practical
+- Admin password is now stored as a one-way hashed value
+
+
+
+VERSION 2.0.3
+
+- Adjusted the output for result text. Should now mimic exactly how progress reports behave.
+- Major adjustments to the way pages are built. Paving the way for PHP 5.3 support.
+- A number of checks have been added to show appropriate error messages when data is invalid. This should prevent blank pages showing in the event of an error resulting from insufficient data to display a given page on the portal.
+
+
+
+VERSION 2.0.2
+
+- Added extra double check for careers interview answers only being saved for the current active interview
+
+
+
+VERSION 2.0.1
+
+- Added the ability to pre-populate the course selection builder based on the current years timetable
+- Set the Careers headings to come from KAMAR instead of showing the original hard coded ones
+- Tweaks to the config builder page to be a little more user friendly, includes automatic page detection so the config page will reflect custom pages added to the portal
+- Tweaks to the course selection builder to make managing larger files easier and introduced edit/delete options to each item
+
+
+
+VERSION 2.0.0
+
+- Created admin section for the portal
+- Added config file builder in admin
+- Added course selection file builder in admin
+- Added the course selection page
+- Added new interview section to careers (requires KAMAR 910.xx)
+
+
+
+VERSION 1.3.2
+
+- Fixed a major bug on the results screen, credit totals would be summed regardless of if the student had achieved the result
+- Fixed a major bug on the progress reports screen that could, if a student ID was a subset of another, list progress reports for another student
+- Major security changes to the details (and fees) page, student and secondary caregiver accounts are now locked down to show very little information; primary caregivers will still see all detail
+- A new field in KAMAR itself will allow a student to be flagged to show very little caregiver information for students with sensitive caregiver situations; in addition to the changes above this field will now be queried to provide even further restrictions to caregivers
+- Adjusted the notices page of the student portal to automatically exclude notices from a category containing the text "staff"; this should help prevent staff only messages  being published to the web accidentally
+- Tweaks made to the change of details email code, hopefully this will resolve the issues some people have with this functionality
+- Exposed the smtp_port variable in the config file, this will allow schools to configure the portal to send email with a mail server using another port (or ssl)
+- The cache path now expects a trailing slash, this makes it consistent with the reports path.
+- Introduced an error message when a change of details request email fails; this should make troubleshooting the email setup a bit easier
+- Changed the welcome message to reflect the level of access the user has logged in with
+- Minor tweak to the URL guessing code. Should hopefully cope with the portal not running in a folder within in the web root under Windows now
+- Fixed an inconsistent behaviour when returning to the login screen once you were already logged in, correctly redirects to the afterlogin page now
+- Fixed a minor bug that prevented the students NSN from showing on the web portal
+- Fixed a minor cosmetic issue on the pastoral page
+
+
+
+VERSION 1.3.1
+
+- Fixed major bug in attendance, no codes were showing in 1.3.0
+
+
+
+VERSION 1.3.0
+
+- Added email addresses to the caregiver details screen
+- Added CSS handles to each row of the timetable/attendance tables screens identifying the period slot e.g. period_slot_1, period_slot_2 ... -> period_slot_10
+- Added the ability to move backwards and forwards through notices
+- Added the option to show the students credit balance on the fees page
+- Added new settings to the configuration file to hide/show careers fields as required
+- Added the, basic, ability to email in a change of details request from the details page
+- Updated the Even/Odd weeks address titles to reflect the Residence A/B changes in KAMAR. Also show and hide Residence B depending on if the fields are populated
+- Fix to the library page which had previously assumed the web server was the FileMaker Server machine
+- Re-introduced the L code to the attendance screen after it was removed by an update to KAMAR
+
+
+
+VERSION 1.2.4
+
+- Tweaks to timeout settings introduced in 1.2.2 due to some remaining issues with the Web Publishing Engine connections not being released. Please email the helpdesk [helpdesk@kamar.co.nz] if you still experience these issues
+
+
+
+VERSION 1.2.3
+
+- Simple bug fix for Flo2Cash code
+
+
+
+VERSION 1.2.2
+
+- Added timeout setting designed to release connections to the Web Publishing Engine after 60 seconds (suspect that connections are not dying, esp on FileMaker Server 10)
+
+
+
+VERSION 1.2.1
+
+- Minor update to Kamar Common Interface code as a result of testing
+
+
+
+VERSION 1.2.0
+- Major changes to the code powering the site. Now uses the Kamar Common Interface code. Pages should have improved (in some cases significantly improved) performance as well as reduced load on the FileMaker Web Publishing Engine.
+- Attendance can now be delayed by a specified number of days
+- Results page now shows a summary of credits per level
+- Results page can now be configured to only show some KAMAR assessment types
+- Fixed a bug where Secondary caregivers were called parents and Primary just caregivers on login.
+- Added Athenaeum Issues page to show students/parents items the student currently has issued from the library.
+- Added alternative fees page that supports the Flo2Cash online payment gateway
+
+
+
+VERSION 1.1.0
+- Added 'real' security for pages. In past releases the KAMAR Parent Portal would simply hide pages from navigation if you were lower than the access level required. However, you could navigate to the page by URL and be allowed access. Now, visiting a URL manually will inform your access is denied and will offer a login screen for logging in with a higher access level.
+- Swapped PCG and SGC access levels. If you were using the level 3 access level for any pages, please realise this will make the page visible to PRIMARY caregivers, where in the past it had been SECONDARY.
+- Added the ability to hide attendance codes on the Parent Portal. See the kamar-configuration.php file or INSTALL.txt file for details.
+- Added the ability to show only groups from a certain year onwards.
+- Cosmetic changes to the Groups page, groups should now bunch up by year and type correctly and will display this years groups first.
+- Fixed an issue where if a username was a subset of another then the shorter username couldn't log into the portal, even with correct credentials.
+- Attempted to address the performance issue on the Groups page.
+
+
+
+VERSION 1.0.72
+- Removed surplus text from calendar pages (the stuff that was showing in square brackets)
+- Added an appropriate CSS handle to the calendar pages time so it can be modified safely
+
+
+
+VERSION 1.0.71
+- Timetable page missing from 1.0.7 release, this has been fixed
+- Fix to the calendar (wasn't showing all titles if two or more events were on the same day)
+- Possible fix to future calendar events, there was a report that some future events were missing, I tweaked the filemaker query in an attempt to fix it - please let helpdesk@kamar.co.nz know if there are any issues
+
+
+
+VERSION 1.0.7
+- Addition of the Careers page to the student portal. There is currently no flag to publish this information so please disable the page if you have data that you do not want parents/students to see in this section.
+- Please check out http://www.kamar.co.nz/page/104211/How-can-I-add-a-custom-page-to-the-Student-Web-Portal if you are interested in adding your own pages to the web portal.
+
+
+
+VERSION 1.0.6
+- Bug fix for the Details page (date of birth was showing in american format). This is now controllable from the kamar-configuration.php file using the $config['date'] variable.
+- Bug fix for the Timetable page. Blank times on the Days/Periods screen in KAMAR will now correctly remain empty on the student portal timetable instead of showing as 12:00pm.
+- Redesign of the automatic URL guessing code. Less encompassing but more robust for most typical cases. This should fix almost every issue anyone has had with SSL being requested or malformed URL's forcing the use of the $config['base_url'] parameter.
+
+
+
+VERSION 1.0.5
+- Additional security to prevent areas of the web portal exposing items with 'Do not show on reports' or similar flags to parents.
+
+
+
+VERSION 1.0.4
+- Change to the way calendar events are viewed.
+
+
+
+VERSION 1.0.3
+- Added Server checks to ensure successful installation.
+- Fixed reports results.
+- Moved the location of the kamar-configuration.php file.
+- Changed the Attendance legend.
+- Automatically generating the security key.
+
+
+
+VERSION 1.0.2
+
+- Pastoral area
+- Fees area
+- Timetable Day labels.
+- Configurable Attendance Subjects headings.
+
+
+
+
+VERSION 1.0.1
+
+- Automatically generate the configuration item 'base_url'
+- Added the configuration and template variable 'timestamp'
+- Removed all PHP Sort tags.
+- Cleaned and validated rendered HTML.
+- Updated Installation instructions.
+- Security Fix for viewing the default pages when not logged in.
+- Attendance Showing New Attendance Codes.
+- Attendance showing a larger date range, including fix for current week.
+- Calendar now shows Events 6 months either side of date viewing.
+- Fixed Sorting method of the Results page.
+- Added missing Student Details to page view.
+- Now use KAMARS 'Don't Publish to Web' feature for notices.
+- Allowing Notices that span multiple days to show.
+
+
+
+
+VERSION 1.0.0
+
+- Initial release version.

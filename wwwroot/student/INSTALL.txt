@@ -1,0 +1,37 @@
+KAMAR WEB INTERFACE
+KAMAR Limited
+
+http://www.kamar.co.nz
+
+@package Kamar
+
+Copyright 2009, KAMAR Limited.
+NOTE: Use of this source code is subject to the terms of the KAMAR
+License which accompanies this code. Your use of this source code
+signifies your agreement to such license terms and conditions.
+Code is developed by KAMAR for use with KAMAR only and is copyright
+and is intellectual property of KAMAR Limited.
+
+
+The KAMAR Parent Portal makes use CodeIgniter PHP Framework
+[http://ellislab.com/codeigniter]. The CI license is included in
+CI-license.txt.
+
+
+CONTENTS
+---------------------------------------------------------------------
+
+	Installation Instructions
+	Configuration Options
+	Customising the Interface
+
+
+
+
+
+INSTALLATION INSTRUCTIONS
+---------------------------------------------------------------------
+
+Please follow the instructions on the following page on the KAMAR website:
+
+http://www.kamar.co.nz/page/103707/Download-KAMAR-Parent-Portal
